@@ -104,7 +104,6 @@ open index.html
 2c. Save your work using `git`:
 
 ```bash
-git init
 git add -A
 git commit -m "Added some recipes."
 git tag step2
