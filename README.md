@@ -36,10 +36,10 @@ subl .
 </head>
 
 <body>
-  <div class="banner">
+  <section class="banner">
     <h1>Welcome to Smoothie Recipes</h1>
     <p>Welcome to my collection of delicious and healthy smoothie recipes. Enjoy!!!</p>
-  </div>
+  </section>
 </body>
 </html>
 ```
@@ -66,10 +66,10 @@ git tag step1
 
 Let's add some recipes to our Smoothies Website.
 
-2a. Put the following HTML code inside the `<body>` under the banner div:
+2a. Put the following HTML code inside the `<body>` under the banner section:
 
 ```html
-  <div class="recipes">
+  <section class="recipes">
     <h2>Classic</h2>
     <ul>
       <li>2 small bananas, broken into chunks</li>
@@ -95,7 +95,7 @@ Let's add some recipes to our Smoothies Website.
       <li>2 tablespoons honey, or to taste</li>
       <li>2 cups ice cubes</li>
     </ul>
-  </div>
+  </section>
 ```
 
 2b. Test it with your default browser:
@@ -170,8 +170,70 @@ open index.html
 3h. Save your work using `git`:
 
 ```bash
-git init
 git add -A
 git commit -m "Added a CSS file and a background image."
 git tag step3
+```
+
+### Step 4 - Add Twitter Bootstrap
+
+In this step we will add the [Twitter Bootstrap](http://getbootstrap.com/) CSS library to our project. Then we will add a Bootstrap _Jumbotron_ to our web site.
+
+4a. Use `bower` to download _Twitter Bootstrap_ and its dependencies into our project. Note that `bower` will put these files into a directory called `bower_components`:
+
+```bash
+bower install bootstrap
+git ignore bower_components
+```
+
+We have also added the `bower_components` directory to our `.gitignore` file so that we will *not* be tracking these downloaded files in our project.
+
+4b. Add the following `link` and `script` tags to the `index.html` file:
+
+```html
+<!-- the following line goes inside the <head> section just before the link to main.css -->
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+...
+
+<!-- the following lines go at the bottom of the <body> section -->
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js" defer></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js" defer></script>
+```
+
+4c. Convert the banner to a Bootstrap _Jumbotron_. Edit `index.html` and replace the "banner" class with Bootstrap's `jumbotron` class:
+
+```html
+  <section class="jumbotron">
+    <h1>Welcome to Smoothie Recipes</h1>
+    <p>Welcome to my collection of delicious and healthy smoothie recipes. Enjoy!!!</p>
+  </section>
+```
+
+Refresh your browser and inspect the results. You should see a nice _Jumbotron_ at the top of the page. The only problem is that the _Jumbotron_ is sitting on top of our background image and it doesn't look right. We will fix this by making the _Jumbotron_ background mostly transparent. We do this by adding a rule to our `main.css` file:
+
+```css
+.jumbotron {
+  padding: 20px;
+  background: rgb(255, 255, 255); /* This is for ie8 and below */
+  background: rgba(255, 255, 255, 0.3); /* the last argument is the opacity */
+}
+```
+
+Let's also add some padding for our `.recipes` class:
+
+```css
+.recipes {
+  padding: 20px;
+}
+```
+
+Refresh your browser again and check it out!
+
+4d. Save your work using `git`:
+
+```bash
+git add -A
+git commit -m "Added Twitter Bootstrap and a Jumbotron."
+git tag step4
 ```
