@@ -58,3 +58,54 @@ git add -A
 git commit -m "Just getting started with our smoothies website."
 git tag step1
 ```
+
+### Step 2 - Adding Some Recipes
+
+Let's add some recipes to our Smoothies Website.
+
+2a. Put the following HTML code inside the `<body>` under the banner div:
+
+```html
+  <div class="recipes">
+    <h2>Classic</h2>
+    <ul>
+      <li>2 small bananas, broken into chunks</li>
+      <li>1 cup frozen unsweetened strawberries</li>
+      <li>1 (8 ounce) container vanilla low-fat yogurt</li>
+      <li>3/4 cup milk</li>
+   </ul>
+
+    <h2>Purple Monster</h2>
+    <ul>
+      <li>2 frozen bananas</li>
+      <li>1/2 cup frozen blueberries</li>
+      <li>1 cup orange juice</li>
+      <li>1 tablespoon honey (optional)</li>
+      <li>1 teaspoon vanilla extract (optional)</li>
+    </ul>
+
+    <h2>Peanut Butter Banana</h2>
+    <ul>
+      <li>2 bananas, broken into chunks</li>
+      <li>2 cups milk</li>
+      <li>1/2 cup peanut butter</li>
+      <li>2 tablespoons honey, or to taste</li>
+      <li>2 cups ice cubes</li>
+    </ul>
+  </div>
+```
+
+2b. Test it with your default browser:
+
+```bash
+open index.html
+```
+
+2c. Save your work using `git`:
+
+```bash
+git init
+git add -A
+git commit -m "Added some recipes."
+git tag step2
+```
