@@ -477,7 +477,7 @@ Now we should see that all of our recipes look nice. Try resizing your browser w
 }
 ```
 
-5f. Fade out the background image a bit.
+5f1. (Option 1) Fade out the background image a bit.
 
 CSS does not have a way to make a background image semi-transparent. So let's use `imagemagick` to make our background image a little less distracting. The `imagemagick` app should have been installed during *InstallFest* and its executable is called `convert`:
 
@@ -500,6 +500,23 @@ body {
 ```
 
 Now refresh the browser and note the faded background. If you like the original background better, you still have that file in `images`, or feel free to download and use your own background image.
+
+5f2. (Option 2) Alternative Way to Fade Background Image
+
+There is a new CSS feature that is supported by most modern browsers called `background-blend-mode`. See [CSS Blend Modes](https://css-tricks.com/basics-css-blend-modes/).
+
+To use this feature, simply edit `main.css` and set the content of the `body` rule to:
+
+```css
+body {
+  background-color: #808080;
+  background-image: url("images/background.jpg");
+  background-blend-mode: screen;
+  background-size: 1600px auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+```
 
 5g. Save your work using `git`:
 

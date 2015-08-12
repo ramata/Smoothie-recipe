@@ -1,10 +1,7 @@
 body {
-  background-color: #ffffff;
-
-  /* Note that we faded the background image with:
-     convert background.jpg -fill white -colorize 50% background-faded.jpg
-  */
-  background-image: url("images/background-faded.jpg");
+  background-color: #808080;
+  background-image: url("images/background.jpg");
+  background-blend-mode: screen;
   background-size: 1600px auto;
   background-repeat: no-repeat;
   background-attachment: fixed;
