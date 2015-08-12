@@ -501,7 +501,7 @@ body {
 
 Now refresh the browser and note the faded background. If you like the original background better, you still have that file in `images`, or feel free to download and use your own background image.
 
-5f2. (Option 2) Alternative Way to Fade Background Image
+5f2. (Option 2) Alternate Way to Fade Background Image
 
 There is a new CSS feature that is supported by most modern browsers called `background-blend-mode`. See [CSS Blend Modes](https://css-tricks.com/basics-css-blend-modes/).
 
