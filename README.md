@@ -316,14 +316,13 @@ Change the `body` rule in `main.css` to the following:
 body {
   background-color: #ffaaff;
   background-image: url("images/background.jpg");
-  background-size: 1600px auto;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 ```
 
-Now you should see a nice background image that stretches to 1600px and does not repeat.
-But it seems like we are wasting a lot of space on the right side of our page and doing a lot of vertical scrolling. Let's fix that with a Grid.
+Now you should see a nice background image that stretches to cover the entire page and does not repeat. But it seems like we are wasting a lot of space on the right side of our page and doing a lot of vertical scrolling. Let's fix that with a Grid.
 
 5c. Add the container and row for the Bootstrap Grid:
 
@@ -512,7 +511,7 @@ body {
   background-color: #808080;
   background-image: url("images/background.jpg");
   background-blend-mode: screen;
-  background-size: 1600px auto;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
