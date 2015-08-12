@@ -7,6 +7,10 @@ This is a simple static web site containing various Smoothie recipes.
 The steps below will demonstrate how to create this project from scratch:
 
 * [Step 1 - Setup The Project](#step-1---setup-the-project)
+* [Step 2 - Adding Some Recipes](#step-2---adding-some-recipes)
+* [Step 3 - Add a CSS file](#step-3---add-a-css-file)
+* [Step 4 - Add Twitter Bootstrap](#step-4---add-twitter-bootstrap)
+* [Step 5 - Add Bootstrap Grid Layout](#step-5---add-bootstrap-grid-layout)
 
 ### Step 1 - Setup The Project
 
@@ -126,7 +130,7 @@ touch main.css
 
 ```css
 body {
-  background-color: #ffaaff;
+  background-color: #ffffff;
 }
 ```
 
@@ -236,4 +240,271 @@ Refresh your browser again and check it out!
 git add -A
 git commit -m "Added Twitter Bootstrap and a Jumbotron."
 git tag step4
+```
+
+### Step 5 - Add Bootstrap Grid Layout
+
+In this step we will use Bootstrap's _Grid_ to layout our recipes horizontally.
+
+5a. First let's add some more recipes:
+
+```html
+<h2>Banana-Berry</h2>
+    <ul>
+      <li>1 small banana</li>
+      <li>6 oz. pineapple juice</li>
+      <li>0.50 cup ice</li>
+      <li>6 oz. blueberries</li>
+      <li>6 oz. raspberries or blackberries</li>
+      <li>2 tsp. honey</li>
+      <li>1 tsp. grated peeled fresh ginger</li>
+    </ul>
+
+    <h2>Irresistible Peach</h2>
+    <ul>
+      <li>2 cup peaches</li>
+      <li>0.50 cup milk</li>
+      <li>1 cup Ice cream</li>
+      <li>1 tbsp. lemon juice</li>
+      <li>peach slices</li>
+    </ul>
+
+    <h2>Kiwi Strawberry</h2>
+    <ul>
+      <li>1 banana</li>
+      <li>6 strawberries</li>
+      <li>1 kiwi</li>
+      <li>1/2 cup vanilla frozen yogurt</li>
+      <li>3/4 cup pineapple and orange juice blend</li>
+    </ul>
+
+    <h2>Chocolate Banana</h2>
+    <ul>
+      <li>1 banana</li
+      <li>1 tablespoon cocolate syrup</li>
+      <li>1 cup milk</li
+      <li>1 cup crushed ice</li>
+    </ul>
+
+    <h2>Feel Good</h2>
+    <ul>
+      <li>1/2 cup nonfat milk</li>
+      <li>1/2 cup fat-free plain yogurt</li>
+      <li>1/2 frozen banana, peeled and chopped</li>
+      <li>2 tablespoons powdered protein supplement</li>
+      <li>1 1/2 tablespoons flax seed</li>
+      <li>1 teaspoon honey</li>
+      <li>1/2 cup frozen strawberries</li>
+    </ul>
+
+    <h2>Mango Lassi II</h2>
+    <ul>
+      <li>2 mangos - peeled, seeded and diced</li>
+      <li>2 cups plain yogurt</li>
+      <li>1/2 cup white sugar</li>
+      <li>1 cup ice</li>
+    </ul>
+```
+
+Refresh your browser and scroll down. Did you notice that the background repeats and it is a bit distracting? Let's fix it.
+
+5b. Change background to be fixed with no repeat:
+
+Change the `body` rule in `main.css` to the following:
+
+```css
+body {
+  background-color: #ffaaff;
+  background-image: url("images/background.jpg");
+  background-size: 1600px auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+```
+
+Now you should see a nice background image that stretches to 1600px and does not repeat.
+But it seems like we are wasting a lot of space on the right side of our page and doing a lot of vertical scrolling. Let's fix that with a Grid.
+
+5c. Add the container and row for the Bootstrap Grid:
+
+```html
+<section class="recipes container-fluid">
+  <div class="row">
+  ...
+  </div>
+</section>
+```
+
+Remember to keep your indentation consistent.
+
+5d. Wrap each recipe in it's own div and add the grid col rules:
+
+```html
+<div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+  ...
+</div>
+```
+
+You can use Sublime's multi-select to add the above opening `<div>` before each `<h2>` and the closing `</div>` after each `</ul>`.
+
+You should end up with this HTML for your recipes section:
+
+```html
+<section class="recipes container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Classic</h2>
+        <ul>
+          <li>2 small bananas, broken into chunks</li>
+          <li>1 cup frozen unsweetened strawberries</li>
+          <li>1 (8 ounce) container vanilla low-fat yogurt</li>
+          <li>3/4 cup milk</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Purple Monster</h2>
+        <ul>
+          <li>2 frozen bananas</li>
+          <li>1/2 cup frozen blueberries</li>
+          <li>1 cup orange juice</li>
+          <li>1 tablespoon honey (optional)</li>
+          <li>1 teaspoon vanilla extract (optional)</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Peanut Butter Banana</h2>
+        <ul>
+          <li>2 bananas, broken into chunks</li>
+          <li>2 cups milk</li>
+          <li>1/2 cup peanut butter</li>
+          <li>2 tablespoons honey, or to taste</li>
+          <li>2 cups ice cubes</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Banana-Berry</h2>
+        <ul>
+          <li>1 small banana</li>
+          <li>6 oz. pineapple juice</li>
+          <li>0.50 cup ice</li>
+          <li>6 oz. blueberries</li>
+          <li>6 oz. raspberries or blackberries</li>
+          <li>2 tsp. honey</li>
+          <li>1 tsp. grated peeled fresh ginger</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Irresistible Peach</h2>
+        <ul>
+          <li>2 cup peaches</li>
+          <li>0.50 cup milk</li>
+          <li>1 cup Ice cream</li>
+          <li>1 tbsp. lemon juice</li>
+          <li>peach slices</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Kiwi Strawberry</h2>
+        <ul>
+          <li>1 banana</li>
+          <li>6 strawberries</li>
+          <li>1 kiwi</li>
+          <li>1/2 cup vanilla frozen yogurt</li>
+          <li>3/4 cup pineapple and orange juice blend</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Chocolate Banana</h2>
+        <ul>
+          <li>1 banana</li
+          <li>1 tablespoon cocolate syrup</li>
+          <li>1 cup milk</li
+          <li>1 cup crushed ice</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Feel Good</h2>
+        <ul>
+          <li>1/2 cup nonfat milk</li>
+          <li>1/2 cup fat-free plain yogurt</li>
+          <li>1/2 frozen banana, peeled and chopped</li>
+          <li>2 tablespoons powdered protein supplement</li>
+          <li>1 1/2 tablespoons flax seed</li>
+          <li>1 teaspoon honey</li>
+          <li>1/2 cup frozen strawberries</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-sm-6 col-xs-12 recipe">
+        <h2>Mango Lassi II</h2>
+        <ul>
+          <li>2 mangos - peeled, seeded and diced</li>
+          <li>2 cups plain yogurt</li>
+          <li>1/2 cup white sugar</li>
+          <li>1 cup ice</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+```
+
+Inspect your results. You should see the recipes in a grid but notice that the last recipe doesn't quite look right? Why?
+
+Let's fix it by defining a `min-height` for each `recipe` in our `main.css` file:
+
+```css
+.recipe {
+  min-height: 220px;
+}
+```
+
+Note that we added the `recipe` class to our HTML just so that we could control the look of each recipe.
+
+Now we should see that all of our recipes look nice. Try resizing your browser window to see how it looks at smaller screen sizes.
+
+5e. Change the color of each recipe's `<h2>` to `blue`:
+
+```css
+.recipe h2 {
+  color: blue;
+}
+```
+
+5f. Fade out the background image a bit.
+
+CSS does not have a way to make a background image semi-transparent. So let's use `imagemagick` to make our background image a little less distracting. The `imagemagick` app should have been installed during *InstallFest* and its executable is called `convert`:
+
+```bash
+which convert
+convert --version
+cd images
+convert background.jpg -fill white -colorize 50% background-faded.jpg
+cd ..
+```
+
+Edit `main.css` and change the `body` rule to use `background-faded.jpg`:
+
+```css
+body {
+  ...
+  background-image: url("images/background-faded.jpg");
+  ...
+}
+```
+
+Now refresh the browser and note the faded background. If you like the original background better, you still have that file in `images`, or feel free to download and use your own background image.
+
+5g. Save your work using `git`:
+
+```bash
+git add -A
+git commit -m "Added Twitter Bootstrap Grid and faded the background image."
+git tag step5
 ```
