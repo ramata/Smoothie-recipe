@@ -5,6 +5,7 @@
 Clone this repository and test that you can see the Smoothie Recipes in your browser:
 
 ```bash
+cd ~/ga/wdi
 git clone https://github.com/ATL-WDI-Exercises/smoothie-recipes.git
 cd smoothie-recipes
 open index.html
