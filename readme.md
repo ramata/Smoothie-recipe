@@ -21,3 +21,7 @@ Try some of the following:
 * Change the font family to something fun (like _fantasy_)
 * Use Flexbox or a grid system (such as Twitter Bootstrap) to put your recipes side-by-side
 * Make it responsive
+
+Here is a sample solution:
+
+![Screen Shot](images/screen-shot.png)
