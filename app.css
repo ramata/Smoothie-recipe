@@ -1,3 +1,32 @@
 body {
-  background: pink;
+  font-family: fantasy;
+  background-image: url("fruit-cocktails-1446093_1920.jpg");
+  color: blue;
+}
+h1 {
+  font-size: 60px;
+  color: #00ff00;
+  text-align: center;
+
+}
+h2:hover {
+  color: red;
+}
+.small-screen, .medium-screen, .large-screen {
+  display: none;
+}
+@media only screen and (max-width: 399px) {
+  body { background-color: lightblue; }
+  .small-screen { display: block; }
+}
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+   body { background-color: lightgreen; }
+  .small-screen { display: none; }
+  .medium-screen { display: block; }
+}
+@media only screen and (min-width: 768px) {
+   body { background-color: lightyellow; }
+  .small-screen { display: none; }
+  .medium-screen { display: none; }
+  .large-screen { display: block; }
 }
